@@ -4,6 +4,7 @@ services:
     build: .
     volumes:
       - ./fluent.conf:/fluentd/etc/fluent.conf:ro
+      - ./log:/fluentd/log:ro
       - buffer:/fluentd/buffer
     environment:
       - HIVE_URI=$HIVE_URI
