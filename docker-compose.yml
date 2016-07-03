@@ -1,0 +1,12 @@
+version: '2'
+services:
+  fluentd:
+    build: .
+    volumes:
+      - ./fluent.conf:/fluentd/etc/fluent.conf:ro
+      - buffer:/fluentd/buffer
+    environment:
+      - HIVE_URI=$HIVE_URI
+      - TAG=$TAG
+volumes:
+  buffer: {}
